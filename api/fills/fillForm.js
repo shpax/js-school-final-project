@@ -1,5 +1,5 @@
-// POST /fills/13123/new
-
+// POST /fills/13123
+// 13123 is form id
 const data = {
   fields: {
     username: 'John',

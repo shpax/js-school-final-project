@@ -1,5 +1,6 @@
-// GET /fills/13123?from=10&to=20
-// form, to are optional
+// GET /fills/13123?offset=10&count=10
+// 13123 is form id
+// offset, count are optional
 const response = {
   fills: [
     {

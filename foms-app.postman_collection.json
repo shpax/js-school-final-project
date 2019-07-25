@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "f7b06d1d-aae5-450b-aff4-185924632295",
+		"name": "foms-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Form",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My Brand New Form\",\n    \"fields\": [\n        {\n            \"type\": \"text\",\n            \"name\": \"username\",\n            \"label\": \"enter username here\",\n            \"placeholder\": \"John Doe\"\n        },\n        {\n            \"type\": \"number\",\n            \"name\": \"year\",\n            \"label\": \"enter year of birth \",\n            \"placeholder\": \"2006\"\n        },\n        {\n            \"type\": \"dropdown\",\n            \"name\": \"gender\",\n            \"label\": \"Gender\",\n            \"items\": [\n                {\n                    \"name\": \"Male\",\n                    \"value\": \"m\"\n                },\n                {\n                    \"name\": \"Female\",\n                    \"value\": \"w\"\n                }\n            ],\n            \"default\": 0\n        },\n        {\n            \"type\": \"checkmark\",\n            \"name\": \"news\",\n            \"label\": \"get news on email\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{host}}/shpax/forms/new",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"forms",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Form",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My 2\",\n    \"fields\": []\n}"
+				},
+				"url": {
+					"raw": "{{host}}/shpax/forms/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Form",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/shpax/forms/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Forms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/shpax/forms/list",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"forms",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Fill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fields\": {\n\t    \"username\": \"John\",\n\t    \"year\": 1994,\n\t    \"gender\": \"m\",\n\t    \"news\": true\n\t  }\n}"
+				},
+				"url": {
+					"raw": "{{host}}/shpax/fills/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"fills",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Fills",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fields\": {\n\t    \"username\": \"John\",\n\t    \"year\": 12313,\n\t    \"gender\": \"m\",\n\t    \"news\": false\n\t  }\n}"
+				},
+				"url": {
+					"raw": "{{host}}/shpax/fills/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shpax",
+						"fills",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "93f008c7-5c24-4bd1-8c43-505bced29dfb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "83054dd9-db3e-47bf-b2e9-d0293f04e3bc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e71f7aa0-de9b-4c5d-9f40-2a40197942b4",
+			"key": "host",
+			"value": "forms-app.brutgroot.com",
+			"type": "string"
+		}
+	]
+}
